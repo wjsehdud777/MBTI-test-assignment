@@ -15,6 +15,12 @@ const Home = () => {
       >
         로그인하기
       </Link>
+      <Link
+        to={"/profile"}
+        className="bg-red-400 text-white py-2 px-4 rounded hover:bg-red-500 cursor-pointer text-center mt-8"
+      >
+        프로필 수정
+      </Link>
     </div>
   );
 };
