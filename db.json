@@ -1,3 +1,13 @@
 {
-  "users": [{}]
+  "testResults": [
+    {
+      "id": "유저 ID",
+      "nickname": "닉네임",
+      "result": "MBTI 유형",
+      "visibility": true,
+      "date": "yyyy-MM-dd",
+      "userId": "현재 사용자 ID"
+    },
+    { "visibility": false }
+  ]
 }
