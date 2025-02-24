@@ -7,18 +7,26 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
+  // 회원가입 상태 확인 (예: 로컬 스토리지나 상태 관리 라이브러리로 저장된 정보로 확인)
+  const isSignedUp = localStorage.getItem("isSignedUp"); // 예시로 로컬스토리지에 저장된 isSignedUp 여부로 확인
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email || !password) {
-      setErrorMessage("이메일과 비밀번호를 입력해 주세요.");
+      setErrorMessage("이메일과 비밀번호를 입력해 주세요!");
+      return;
+    }
+
+    if (!isSignedUp) {
+      setErrorMessage("회원가입이 필요합니다!");
       return;
     }
 
     try {
-      navigate("/");
+      navigate("/"); // 로그인 후 홈으로 이동
     } catch (error) {
-      setErrorMessage("로그인 실패. 다시 시도해 주세요.");
+      setErrorMessage("로그인 실패. 다시 시도해 주세요!");
     }
   };
 
